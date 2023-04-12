@@ -2,6 +2,7 @@
 #include <cstdlib>
 using namespace std;
 
+// Aufgabe 1-6
 class Person
 {
 private:
