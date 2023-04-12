@@ -6,16 +6,20 @@ void ausgabe(char);
 void ausgabe(char *);
 void ausgabe(char *, char);
 void tauschen(int &, int &);
-void minmax(int[], int, int, int);
+void tauschen(float &, float &);
+
+void tauschen(float *, float *, int);
+void minmax(int[], int, int &, int &);
 
 int main()
 {
-    // int data[] = {4, 8, 23, -17, 2, -6};
-    // int anzahl = sizeof(data) / sizeof(data[0]);
-    // int min = 0, max = 0;
-    // minmax(data, anzahl, min, max);
+    int data[] = {4, 8, 23, -17, 2, -6};
+    int anzahl = sizeof(data) / sizeof(data[0]);
+    int min = 0, max = 0;
+    minmax(data, anzahl, min, max);
 }
 
+// 1-1
 void ausgabe(char c)
 {
     cout << "*****" << endl
@@ -23,7 +27,8 @@ void ausgabe(char c)
          << "*****" << endl;
 }
 
-void Ausgabe(char *s)
+// 1-1 Erweiterung
+void ausgabe(char *s)
 {
     string sAsString = s;
 
@@ -58,6 +63,7 @@ void Ausgabe(char *s)
     */
 }
 
+// 1-2
 void ausgabe(char *s, char zeichen)
 {
     string sAsString = s;
@@ -93,8 +99,44 @@ void ausgabe(char *s, char zeichen)
     */
 }
 
-// save the min and max value in the two parameters min and max
-void minmax(int data[], int anzahl, int min, int max)
+// 1-3
+// C++: Call by Reference
+// Das & ist das Referenzzeichen
+void tauschen(int &a, int &b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+// 1-3 Erweiterung
+void tauschen(float &x, float &y)
+{
+    float temp = x;
+    x = y;
+    y = temp;
+}
+
+// 1-3 Erweiterung 2
+void tauschen(float *x, float *y, int anzahl)
+{
+    float temp[anzahl];
+    for (int i = 0; i < anzahl; i++)
+    {
+        temp[i] = x[i];
+        x[i] = y[i];
+        y[i] = temp[i];
+    }
+}
+
+// 1-3 Antwort
+/*
+Die ersten beiden Versionen kann man nicht in Java umsetzen, da primiteve Datentypen als Parameter keine Referenzen sind. Arrays als Parameter jedoch schon,
+da sie Objekte sind und somit als Refernzen gehandhabt werden.
+Um sie umzusetzen müsste man globale Variablen verwenden.
+*/
+
+void minmax(int data[], int anzahl, int &min, int &max)
 {
     min = data[0];
     max = data[0];
@@ -109,15 +151,4 @@ void minmax(int data[], int anzahl, int min, int max)
             max = data[i];
         }
     }
-    cout << "Min: " << min << endl;
-    cout << "Max: " << max << endl;
-}
-
-// C++: Call by Reference
-// Das & ist das Referenzzeichen
-void tauschen(int &a, int &b)
-{
-    int temp = a;
-    a = b;
-    b = temp;
 }
