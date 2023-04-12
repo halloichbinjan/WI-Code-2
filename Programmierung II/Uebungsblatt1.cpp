@@ -5,15 +5,15 @@ using namespace std;
 void ausgabe(char);
 void ausgabe(char *);
 void ausgabe(char *, char);
-// void tauschen(int a, int b);
+void tauschen(int &, int &);
 void minmax(int[], int, int, int);
 
 int main()
 {
-    int data[] = {4, 8, 23, -17, 2, -6};
-    int anzahl = sizeof(data) / sizeof(data[0]);
-    int min = 0, max = 0;
-    minmax(data, anzahl, min, max);
+    // int data[] = {4, 8, 23, -17, 2, -6};
+    // int anzahl = sizeof(data) / sizeof(data[0]);
+    // int min = 0, max = 0;
+    // minmax(data, anzahl, min, max);
 }
 
 void ausgabe(char c)
@@ -113,8 +113,11 @@ void minmax(int data[], int anzahl, int min, int max)
     cout << "Max: " << max << endl;
 }
 
-// void tauschen(int a, int b){
-//     int temp = a;
-//     a = b;
-//     b = temp;
-// }
+// C++: Call by Reference
+// Das & ist das Referenzzeichen
+void tauschen(int &a, int &b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}

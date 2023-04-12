@@ -1,6 +1,6 @@
-public class Main {
+public class Uebungsblatt1 {
     public static void main(String[] args) {
-        Main mainObj = new Main();
+        Uebungsblatt1 mainObj = new Uebungsblatt1();
         int[] data = { 4, 8, 23, -17, 2, -6 };
         System.out.println("Minimum: " + mainObj.mini(data) + ", Maximum: " + mainObj.maxi(data));
     }
