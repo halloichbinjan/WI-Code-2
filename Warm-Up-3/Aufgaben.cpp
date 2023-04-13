@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 // bool equals(Bruch b1, Bruch b2){
-//     if(b1.z / b1.n == b2.z == b2.n){
+//     if(b1.z / b1.n == b2.z / b2.n){
 //         cout << "Die Brueche sind gleich." << endl;
 //         return true;
 //     }
