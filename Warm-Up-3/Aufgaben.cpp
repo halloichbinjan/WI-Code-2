@@ -17,6 +17,7 @@ void readRange(int &a, int start, int end)
     int input;
     do
     {
+        cout << "Bitte geben Sie eine Zahl zwischen " << start << " und " << end << " ein: ";
         cin >> input;
     } while (input < start || input > end);
     a = input;
@@ -26,6 +27,6 @@ int main()
 {
     int a;
     readRange(a, 1, 10);
-    cout << a << endl;
+    cout << "Die Zahl ist nun: " << a << endl;
     return 0;
 }
