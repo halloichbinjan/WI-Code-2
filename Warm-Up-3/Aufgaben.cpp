@@ -1,6 +1,13 @@
 #include <iostream>
 using namespace std;
 
+// bool Bruch::equals(Bruch other)
+// {
+//     return this->z * b2.n == this->n * b2.z;
+// }
+
+// ODER
+
 // int Bruch::equals(Bruch other)
 // {
 //     if (this->z * b2.n == this->n * b2.z)
