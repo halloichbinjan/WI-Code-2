@@ -25,8 +25,8 @@
     eines vorhandenen Objekts und der Standard-Zuweisungsoperator weist den Wert eines vorhandenen Objekts einem anderen Objekt zu.
     In Java gibt es ebenfalls keine vordefinierten Konstruktoren für Klassen. Jede Klasse muss ihre eigenen Konstruktoren definieren, 
     um Objekte zu initialisieren. Eine Klasse kann einen oder mehrere Konstruktoren definieren, um Objekte auf verschiedene Weise zu initialisieren.
-
-Allerdings gibt es in Java eine implizite Standardkonstruktor, der automatisch erzeugt wird, wenn die Klasse keinen Konstruktor definiert hat. Dieser Standardkonstruktor hat keine Argumente und initialisiert alle Member-Variablen mit ihren Standardwerten.
+    Allerdings gibt es in Java eine implizite Standardkonstruktor, der automatisch erzeugt wird, wenn die Klasse keinen Konstruktor definiert hat. 
+    Dieser Standardkonstruktor hat keine Argumente und initialisiert alle Member-Variablen mit ihren Standardwerten.
 
 6. Weshalb deklariert man in C++ bei einer get-Methode, die etwas vom Typ char * zurückliefert, 
 üblicherweise den Rückgabetyp als const char *? Wieso ist eine ähnliche Kennzeichnung bei der entsprechenden Java-Methode, 
