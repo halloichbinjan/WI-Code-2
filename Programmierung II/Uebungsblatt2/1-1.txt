@@ -1,0 +1,47 @@
+1. Wozu dienen die Schutzbereiche private und public im Rahmen der objektorientierten Programmierung?
+
+    private dient dazu, dass (meistens alle) Attribute und (teilweise) Methoden einer Klasse nur innerhalb dieser Klasse zugegriffen werden kann. 
+    So wird z.B. vermieden, dass bestimmte Attribute ungültige Werte enthalten. Methoden und Attribute die public sind können einfach von jeder externen 
+    Stelle verändert werden. Attribute sind meist private und werden mit getter-Methoden abgefragt und (falls nötig) mit setter-Methoden gesetzt (wobei
+    auch Validierungen enthalten sein können).
+
+2. Was ist der Unterschied zwischen einer Klasse und einem Objekt?
+    Ein Objekt ist eine (bestimmte) Instanz einer Klasse.
+
+3. Wozu dient ein Konstruktor?
+    Er dient dazu, dass beim Instanziieren eines Objekts, der darin implementierte Code ausgeführt wird.
+    So können z.B. über einen Default-Konstruktor beim Instanziieren direkt Standard-Werte oder als Parameter übergebene Werte für 
+    bestimmte Attribute gesetzt werden.
+
+4. Wieviele Konstruktoraufrufe durchläuft ein Objekt im Laufe seiner Lebensdauer?
+    Es durchläuft genau einen Aufruf, da der Konstruktor manuell aufgerufen werden kann, sondern dies nur beim Instanziieren ein einziges mal geschieht.
+
+5. Welche Konstruktoren besitzt jede C++-Klasse? Wie sieht dies in Java aus?
+    In C++ gibt es keine vordefinierten Konstruktoren für Klassen. Jede Klasse muss ihre eigenen Konstruktoren definieren, 
+    um Objekte zu initialisieren. Eine Klasse kann einen oder mehrere Konstruktoren definieren, um Objekte auf verschiedene Weise zu initialisieren.
+    Es gibt jedoch einige automatisch generierte Konstruktoren, die von C++ zur Verfügung gestellt werden, wenn die Klasse keinen eigenen Konstruktor definiert hat. 
+    Diese automatisch generierten Konstruktoren sind der Standard-Konstruktor, der Kopier-Konstruktor und der Standard-Zuweisungsoperator. 
+    Der Standard-Konstruktor initialisiert die Member-Variablen mit Standardwerten, der Kopier-Konstruktor erstellt ein neues Objekt als Kopie 
+    eines vorhandenen Objekts und der Standard-Zuweisungsoperator weist den Wert eines vorhandenen Objekts einem anderen Objekt zu.
+    In Java gibt es ebenfalls keine vordefinierten Konstruktoren für Klassen. Jede Klasse muss ihre eigenen Konstruktoren definieren, 
+    um Objekte zu initialisieren. Eine Klasse kann einen oder mehrere Konstruktoren definieren, um Objekte auf verschiedene Weise zu initialisieren.
+
+Allerdings gibt es in Java eine implizite Standardkonstruktor, der automatisch erzeugt wird, wenn die Klasse keinen Konstruktor definiert hat. Dieser Standardkonstruktor hat keine Argumente und initialisiert alle Member-Variablen mit ihren Standardwerten.
+
+6. Weshalb deklariert man in C++ bei einer get-Methode, die etwas vom Typ char * zurückliefert, 
+üblicherweise den Rückgabetyp als const char *? Wieso ist eine ähnliche Kennzeichnung bei der entsprechenden Java-Methode, 
+die etwas vom Typ String zurückliefert, nicht erforderlich?
+    In C++ deklariert man bei einer get-Methode, die etwas vom Typ char* zurückgibt, üblicherweise den Rückgabetyp als const char*, um zu signalisieren, 
+    dass der zurückgegebene Zeiger nicht dazu verwendet werden soll, um den Inhalt des Zeichensatzes zu ändern.
+    In Java gibt es eine ähnliche Konvention für unveränderliche Zeichenfolgen, die durch den Typ String dargestellt werden. 
+    Der Rückgabetyp einer get-Methode, die etwas vom Typ String zurückgibt, muss nicht als const gekennzeichnet werden, 
+    da String-Objekte in Java unveränderlich sind und somit keine unerwarteten Änderungen an der ursprünglichen Zeichenfolge auftreten können.
+
+7. Was besagt das nachgestellte const bei einer C++-Methode (innerhalb einer Klasse)?
+    In C++ gibt das nachgestellte const bei einer Methode innerhalb einer Klasse an, dass diese Methode die Member-Variablen des Objekts,
+    auf dem sie aufgerufen wird, nicht ändern wird.
+
+8. Weshalb ist main() in Java eine static-Methode?
+    Das liegt daran, dass non-static-Methoden nur auf Objekten ausgeführt werden können, static-Methoden jedoch an die Klasse gebunden sind.
+    Da main() der Entry-Point ist und somit beim Starten des Programms noch kein Objekt existiert auf dem die main()-Methode ausgeführt
+    werden könnte, muss diese static sein.
