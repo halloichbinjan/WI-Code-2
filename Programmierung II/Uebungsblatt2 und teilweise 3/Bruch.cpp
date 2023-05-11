@@ -10,14 +10,15 @@ private:
 public:
     Bruch();         // Default-Konstruktor
     Bruch(int, int); // Konstruktor
-    Bruch addiere(Bruch);
-    void Ausgabe();
+    friend ostream &operator<<(ostream &out, const Bruch &b);
     void eingabe();
     void Kuerzen(int &, int &);
     int GGT(int, int);
-    Bruch subtrahiere(Bruch);
-    Bruch multipliziere(Bruch);
-    Bruch dividiere(Bruch);
+    Bruch operator+(Bruch);
+    Bruch operator-(Bruch);
+    Bruch operator*(Bruch);
+    Bruch operator/(Bruch);
+    Bruch(const Bruch &other);
 
 }; // end class Bruch
 
@@ -33,6 +34,11 @@ Bruch::Bruch(int _z, int _n)
     z = _z;
     n = _n;
     cout << "Kanonischer Konstruktor" << endl;
+}
+
+Bruch::Bruch(const Bruch &other) : z(other.z), n(other.n)
+{
+    cout << "Copy-Konstruktor" << endl;
 }
 
 void Bruch::eingabe()
@@ -58,11 +64,11 @@ void Bruch::eingabe()
     this->n = nIn;
 }
 
-void Bruch::Ausgabe()
+ostream &operator<<(ostream &out, const Bruch &b)
 {
-    cout << z << "/" << n << endl;
+    out << b.z << "/" << b.n;
+    return out;
 }
-
 // -------------------------------------------------------------------------
 // Name:        GGT
 // Aufgabe:     Ermittlung des groessten gemeinsamen Teilers zweier
@@ -121,14 +127,14 @@ void Bruch::Kuerzen(int &z, int &n)
 
 } // end Kuerzen(int&,int&)
 
-Bruch Bruch::addiere(Bruch q1)
+Bruch Bruch::operator+(Bruch q1)
 {
     Bruch q;
     q.z = z * q1.n + q1.z * n;
     q.n = n * q1.n;
     return (q);
 } // end Bruch::addiere
-Bruch Bruch::subtrahiere(Bruch q1)
+Bruch Bruch::operator-(Bruch q1)
 {
     Bruch q;
     // Beim Subtrahieren müssen die Brüche auf den gleichen Nenner gebracht werden
@@ -139,19 +145,19 @@ Bruch Bruch::subtrahiere(Bruch q1)
     return q;
 }
 
-Bruch Bruch::multipliziere(Bruch q1)
+Bruch Bruch::operator*(Bruch q1)
 {
     Bruch q;
     q.z = z * q1.z;
     q.n = n * q1.n;
     return (q);
 }
-Bruch Bruch::dividiere(Bruch q1)
+Bruch Bruch::operator/(Bruch q1)
 {
     Bruch q;
     q.z = z * q1.n;
     q.n = n * q1.z;
-    return q;
+    return (q);
 }
 
 int main()
@@ -159,5 +165,5 @@ int main()
     Bruch bruch;
     Bruch bruch1(1, 2);
     bruch.eingabe();
-    bruch.subtrahiere(bruch);
+    bruch - bruch1;
 }

@@ -31,6 +31,11 @@ public class Bruch {
         nenner = n;
     }
 
+    Bruch(Bruch other) {
+        this.z = other.z;
+        this.n = other.n;
+    }
+
     public void ausgabe() {
         System.out.println(zaehler + "/" + nenner);
     }
@@ -85,5 +90,13 @@ public class Bruch {
         if (b == 0)
             return a;
         return ggt(b, a % b);
+    }
+
+    public String toString() {
+        return this.zaehler + " / " + this.nenner;
+    }
+
+    public boolean equals(Bruch b) {
+        return this.zaehler == b.zaehler && this.nenner == b.nenner;
     }
 }
