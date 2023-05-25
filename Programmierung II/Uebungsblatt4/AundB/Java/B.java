@@ -1,4 +1,4 @@
-package Uebungsblatt4;
+package Uebungsblatt4.AundB.Java;
 
 public class B extends A {
     private int b;
