@@ -18,9 +18,9 @@ Notiz &Notiz::operator=(const Notiz _other)
 
     strcpy(this->titel, _other.titel);
 
-    delete[] text;
+    delete[] this->text;
     text = new char[strlen(_other.text) + 1];
-    strcpy(text, _other.text);
+    strcpy(this->text, _other.text);
 
     return *this;
 }
