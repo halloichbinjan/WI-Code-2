@@ -15,6 +15,9 @@ public:
     Notiz(int, const char *, const char *);
     Notiz(const Notiz &);
     void ausgabe() const;
+    Notiz &operator=(const Notiz);
+    Notiz operator+(const Notiz);
+    bool sameText(Notiz);
 }; // end class Notiz
 
 #endif

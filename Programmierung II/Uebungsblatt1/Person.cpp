@@ -20,6 +20,8 @@ public:
     void setVorname(char *);
     void setGehalt(float);
     void ausgabe();
+
+    bool operator==(const Person &p);
 };
 
 Person::Person()
@@ -98,6 +100,18 @@ void Person::ausgabe()
          << "Nachname: " << Nachname << endl
          << "Vorname: " << Vorname << endl
          << "Gehalt: " << Gehalt << endl;
+}
+
+bool Person::operator==(const Person &p)
+{
+    if (PersonNr == p.PersonNr)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 // end class Person
